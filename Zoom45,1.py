@@ -7,21 +7,21 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn import metrics
 
 dataset = pd.read_csv("Zooms/Data Science/iris.csv")
-# print(dataset.head)
-# print(dataset.info)
+print(dataset.head)
+print(dataset.info)
 
 print(dataset["species"].unique())
 dataset["species"] = dataset["species"].str.strip()
 
 dataset["species"] = dataset["species"].replace({"setosa":0,"versicolor":1,"virginica":2})
 
-# plt.subplot(221)
-# plt.scatter(dataset["petal_length"], dataset["species"], s=10,c="green")
-# plt.yticks(np.arange(1,4,1))
-# plt.subplot(222)
-# plt.scatter(dataset["petal_width"], dataset["species"], s=10, c="red")
-# plt.yticks(np.arange(1,4,1))
-# plt.show()
+plt.subplot(221)
+plt.scatter(dataset["petal_length"], dataset["species"], s=10,c="green")
+plt.yticks(np.arange(1,4,1))
+plt.subplot(222)
+plt.scatter(dataset["petal_width"], dataset["species"], s=10, c="red")
+plt.yticks(np.arange(1,4,1))
+plt.show()
 
 y = dataset["species"]
 x = dataset.drop("species",axis=1)
